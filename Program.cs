@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System;
+using API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +43,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 //builder.Services.AddOpenApi();
 
 var app = builder.Build();
-
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseCors(opt=>
 {
