@@ -9,12 +9,14 @@ using API.Entities;
 using API.Extensions;
 using API.Interfaces;
 using API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
 
 namespace API.Controllers
 {
+    
     public class AccountController(AppDbContext context,ITokenService tokenService): BaseApiController
     {
         [HttpPost("register")]
