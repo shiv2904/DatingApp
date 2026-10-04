@@ -13,6 +13,7 @@ namespace API.Extensions
                 ID = user.Id,
                 DisplayName = user.DisplayName,
                 Email = user.Email,
+                ImageUrl=user.ImageUrl,
                 Token = tokenService.CreateToken(user)
             };
         }
